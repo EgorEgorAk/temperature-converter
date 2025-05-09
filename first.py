@@ -1,23 +1,22 @@
 while True:
-
-    t = input("Введите: 'C' - Цельсий, 'F' - Фаренгейт, 'K' - Кельвин, 'Q' - выход: ").lower()
+    t = input("Enter: 'C' - Celsius, 'F' - Fahrenheit, 'K' - Kelvin, 'Q' - quit: ").lower()
     if t == 'q':
-        print("Выход из программы.")
+        print("Exiting the program.")
         break
     try:
+        temperature = float(input("Enter the temperature value: "))
 
-        znach = float(input("Введите значение температуры: "))
         if t == "c":
-            print(f'\nТемпература в Фаренгейтах = {(znach * 9/5) + 32:.2f} F')
-            print(f'Температура в Кельвинах = {znach + 273.15:.2f} K\n')
+            print(f'\nTemperature in Fahrenheit = {(temperature * 9/5) + 32:.2f} F')
+            print(f'Temperature in Kelvin = {temperature + 273.15:.2f} K\n')
         elif t == "f":
-            print(f'\nТемпература в Цельсиях = {((znach - 32) * 5/9):.2f} C')
-            print(f'Температура в Кельвинах = {(((znach - 32) * 5/9) + 273.15):.2f} K\n')
+            print(f'\nTemperature in Celsius = {((temperature - 32) * 5/9):.2f} C')
+            print(f'Temperature in Kelvin = {(((temperature - 32) * 5/9) + 273.15):.2f} K\n')
         elif t == "k":
-            print(f'\nТемпература в Цельсиях = {(znach - 273.15):.2f} C')
-            print(f'Температура в Фаренгейтах = {(((znach - 273.15) * 9/5) + 32):.2f} F\n')
+            print(f'\nTemperature in Celsius = {(temperature - 273.15):.2f} C')
+            print(f'Temperature in Fahrenheit = {(((temperature - 273.15) * 9/5) + 32):.2f} F\n')
         else:
-            print("Ошибка ввода! Введите только 'C', 'F', 'K' или 'Q'.\n")
+            print("Invalid input! Please enter only 'C', 'F', 'K', or 'Q'.\n")
 
     except ValueError:
-        print("Ошибка: введите числовое значение температуры.\n")
+        print("Error: please enter a valid numeric temperature.\n")
